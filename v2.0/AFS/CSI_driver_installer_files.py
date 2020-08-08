@@ -20,9 +20,9 @@ import subprocess,time
 
 def main():
 
-    print('#'*20)
-    print("Now it will create new yaml files for your environment")
-    print('#'*20)
+    print('#'*40)
+    print("Now we will create new yaml files for your environment")
+    print('#'*40)
     time.sleep(5)
 
     # Creating encoded key for secret
@@ -49,24 +49,26 @@ def main():
         updated_f.write(yaml.dump(data,default_flow_style=False))
 
 #2. update sc.yaml with new info
-    nfs_ip                   = input("What is ip address of NFS server?         : ")
-    nfs_Path                 = input("What is NFS share path? ex)nfs-user1      :")
+    nfs_ip                   = input("What is ip address of NFS server?: ")
+    nfs_Path                 = input("What is NFS share path? ex)nfs-user1: ")
     reClaim                  = input("Which reclaim policy do you want to apply? Delete(default) or Retain: ")
+    #mntOpt                   = input("What is the mount option?: ")
 
     sc_f = "6.sc.yaml"
     stream = open(sc_f, 'r')
     data = yaml.safe_load(stream)
     data["parameters"]["nfsServer"] = nfs_ip
     data["parameters"]["nfsPath"] = nfs_Path
-    data["parameters"]["reclaimPolicy"] = reClaim
+    data["reclaimPolicy"] = reClaim
+    #data["MountOptions"] = mntOpt
 
     with open(sc_f, 'w') as updated_f:
         updated_f.write(yaml.dump(data,default_flow_style=False))
 
 #3. listing yaml file in current directory and deploy with kubectl
-    print('#'*20)
-    print("Now it will deploy CSI driver objects to your k8s cluster")
-    print('#'*20)
+    print('#'*40)
+    print("Now we will deploy CSI driver objects to your k8s cluster")
+    print('#'*40)
     time.sleep(5)
     
     all_yamls =[file_name for file_name in glob.iglob('*.yaml')]

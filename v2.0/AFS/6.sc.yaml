@@ -6,3 +6,5 @@ provisioner: com.nutanix.csi
 parameters:
     nfsServer: 10.25.198.109
     nfsPath: nfs-user1
+allowVolumeExpansion: true
+reclaimPolicy: Delete
