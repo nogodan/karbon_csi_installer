@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #Script Name : CSI_driver_installer_volume.py
 #Script Purpose or Overview : This python script will install CSI driver for your k8s to use Nutanix Storage Cluster - Volume
 #This file is developed by Taeho Choi(taeho.choi@nutanix.com) by referring below resources
