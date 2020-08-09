@@ -53,7 +53,7 @@ def main():
 #2. update sc.yaml with new info
     dsp_ip                   = input("What is the data service ip of your PE cluster?: ")
     #flash_mode               = input("Which flash mode do you want? ENABLED or DISABLED(default): ")
-    cTrname                  = input("What is the storage containername to use for PV? ex): default-container-xxxxx")
+    cTrname                  = input("What is the storage containername to use for PV? ex)default-container-xxxxx: ")
     reClaim                  = input("Which reclaim policy do you want to apply? Delete(default) or Retain: ")
 
     sc_f = "6.sc.yaml"
