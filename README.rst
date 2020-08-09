@@ -30,7 +30,7 @@ Usage
     What is the Prism Element virtual ip address?: xxx.xxx.xxx.xxx
     You typed right ip format
     What is the Prism UI User which has admin role? ex)admin:  admin
-    What is the password for the Prism UI User?
+    What is the password for the Prism UI User? xxxxxx
 
     What is the data service ip of your PE cluster?: xxx.xxx.xxx.xxx
     What is the storage containername to use for PV? ex)default-container-xxxxx: default-container-xxxxxxxxx
