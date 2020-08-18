@@ -19,6 +19,7 @@ from pprint import pprint
 import yaml
 import glob
 import subprocess,time
+from natsort import natsorted
 
 def main():
 
@@ -73,10 +74,11 @@ def main():
     time.sleep(5)
     
     all_yamls =[file_name for file_name in glob.iglob('*.yaml')]
-    sorted_yamls = sorted(all_yamls)
-    for i in sorted_yamls[:6]:
+    sorted_yamls = natsorted(all_yamls)
+
+    for i in sorted_yamls[:12]:
         subprocess.Popen('kubectl create -f %s'%i, shell=True)
         time.sleep(5)
-        
+
 if __name__ == '__main__':
     main()
